@@ -1,0 +1,17 @@
+{
+  "name": "kcalc",
+  "version": "0.1",
+  "description": "Calories tracker",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rog/kcalc.git"
+  },
+  "engines": {
+    "npm": ">=3",
+    "node": ">=5"
+  },
+  "author": "Rogelio Alberto",
+  "license": "Beerware",
+  "scripts": {
+  }
+}
