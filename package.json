@@ -1,6 +1,6 @@
 {
   "name": "kcalc",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Calories tracker",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
   },
   "author": "Rogelio Alberto",
   "license": "Beerware",
-  "scripts": {
-  }
+  "scripts": {},
   "dependencies": {
     "babel-polyfill": "6.20.0",
     "chalk": "1.1.3",
@@ -77,10 +76,28 @@
     "rimraf": "2.5.4",
     "shelljs": "0.7.5",
     "sinon": "2.0.0-pre",
+    "standard": "^9.0.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "2.2.0-rc.3",
     "webpack-dev-middleware": "1.9.0",
     "webpack-hot-middleware": "2.15.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "it",
+      "fetch",
+      "beforeEach",
+      "afterEach",
+      "Response",
+      "h",
+      "location",
+      "requestAnimationFrame",
+      "mkdir",
+      "echo",
+      "exec"
+    ]
   }
 }
