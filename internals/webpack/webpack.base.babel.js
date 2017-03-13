@@ -2,6 +2,9 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const ENV = process.env.NODE_ENV || 'development'
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -24,6 +27,11 @@ module.exports = (options) => ({
       test: /\.css$/,
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader']
+    }, {
+      // Transform our own .(sass) files with PostCSS and CSS-modules
+      test: /\.scss$/,
+      loader:
+      'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader'
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader'
@@ -71,6 +79,11 @@ module.exports = (options) => ({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
+    }),
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      allChunks: true,
+      disable: ENV !== 'production'
     }),
     new webpack.NamedModulesPlugin()
   ]),
