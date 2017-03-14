@@ -11,6 +11,7 @@ const animateProgress = require('./helpers/progress');
 const addCheckmark = require('./helpers/checkmark');
 
 const pkg = require('../../package.json');
+const babelrc = require('../../.babelrc');
 const presets = pkg.babel.presets;
 const plugins = pkg.babel.plugins || [];
 
@@ -80,8 +81,8 @@ for (const locale of locales) {
 }
 
 /* push `react-intl` plugin to the existing plugins that are already configured in `package.json`
-   Example: 
-   ``` 
+   Example:
+   ```
   "babel": {
     "plugins": [
       ["transform-object-rest-spread", { "useBuiltIns": true }]

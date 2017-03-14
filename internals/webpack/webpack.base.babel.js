@@ -2,9 +2,6 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-const ENV = process.env.NODE_ENV || 'development'
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -29,29 +26,35 @@ module.exports = (options) => ({
       loaders: ['style-loader', 'css-loader']
     }, {
       // Transform our own .(sass) files with PostCSS and CSS-modules
-      test: /\.scss$/,
-      loader:
-      'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader'
+      test: /\.(css|scss)$/i,
+      exclude: /node_modules/,
+      loaders: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            import: true,
+            url: true,
+            importLoaders: 1,
+            sourceMap: false,
+            localIdentName: '[local]__[path][name]__[hash:base64:5]'
+          }
+        },
+        'postcss-loader'
+      ]
+    }, {
+      test: /\.(gif|png|jpe?g)$/i,
+      loaders: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name]_[hash:base64:5].[ext]'
+          // publicPath: 'http://local.rog:3000/'
+        }
+      }]
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader'
-    }, {
-      test: /\.(jpg|png|gif)$/,
-      loaders: [
-        'file-loader',
-        {
-          loader: 'image-webpack-loader',
-          query: {
-            progressive: true,
-            optimizationLevel: 7,
-            interlaced: false,
-            pngquant: {
-              quality: '65-90',
-              speed: 4
-            }
-          }
-        }
-      ]
     }, {
       test: /\.html$/,
       loader: 'html-loader'
@@ -79,11 +82,6 @@ module.exports = (options) => ({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
-    }),
-    new ExtractTextPlugin({
-      filename: 'style.css',
-      allChunks: true,
-      disable: ENV !== 'production'
     }),
     new webpack.NamedModulesPlugin()
   ]),
