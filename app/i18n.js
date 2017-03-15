@@ -6,15 +6,19 @@
  */
 import { addLocaleData } from 'react-intl'
 import enLocaleData from 'react-intl/locale-data/en'
+import esLocaleData from 'react-intl/locale-data/es'
 
 import { DEFAULT_LOCALE } from './containers/App/constants'
 import enTranslationMessages from './translations/en.json'
+import esTranslationMessages from './translations/es.json'
 
 export const appLocales = [
-  'en'
+  'en',
+  'es'
 ]
 
 addLocaleData(enLocaleData)
+addLocaleData(esLocaleData)
 
 export const formatTranslationMessages = (locale, messages) => {
   const defaultFormattedMessages = locale !== DEFAULT_LOCALE
@@ -30,5 +34,6 @@ export const formatTranslationMessages = (locale, messages) => {
 }
 
 export const translationMessages = {
-  en: formatTranslationMessages('en', enTranslationMessages)
+  en: formatTranslationMessages('en', enTranslationMessages),
+  es: formatTranslationMessages('es', esTranslationMessages)
 }
