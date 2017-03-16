@@ -1,9 +1,12 @@
-const express = require('express')
-const logger = require('./logger')
+import express from 'express'
+import config from 'config'
+import logger from './logger'
+import setup from './middlewares/frontendMiddleware'
+import {resolve} from 'path'
+
+import kcalcApi from './kcalc-api/app.js'
 
 const argv = require('minimist')(process.argv.slice(2))
-const setup = require('./middlewares/frontendMiddleware')
-const resolve = require('path').resolve
 const app = express()
 
 // In production we need to pass these values in instead of relying on webpack
@@ -25,4 +28,8 @@ app.listen(port, host, (err) => {
     return logger.error(err.message)
   }
   logger.appStarted(port, prettyHost)
+})
+
+kcalcApi.server = kcalcApi.listen(config.api.port, function () {
+  logger.apiStarted(config.api.port, prettyHost)
 })

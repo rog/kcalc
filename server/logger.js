@@ -14,10 +14,10 @@ const logger = {
   appStarted: (port, host) => {
     console.log(`Server started ! ${chalk.green('✓')}`)
 
-    console.log(`
-      ${chalk.bold('Access URLs:')}${divider}
-      Localhost: ${chalk.magenta(`http://${host}:${port}`)}`
-    )
+    console.log(`APP host: ${chalk.magenta(`http://${host}:${port}`)}`)
+  },
+  apiStarted: (port, host) => {
+    console.log(`API host: ${chalk.blue(`http://${host}:${port}`)} ${divider}`)
   }
 }
 
