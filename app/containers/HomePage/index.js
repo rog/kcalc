@@ -8,18 +8,19 @@
  */
 
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
-import messages from './messages'
 
-import Logo from '../../components/Logo'
+import Meal from '../../components/Meal'
+import Navigation from '../../components/Navigation'
+import Footer from '../../components/Footer'
 
 export default class HomePage extends React.PureComponent {
   render () {
     return (
-      <h1>
-        <Logo />
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <div>
+        <Navigation location={this.props.location.pathname} />
+        <Meal action={this.props.route.action} />
+        <Footer />
+      </div>
     )
   }
 }

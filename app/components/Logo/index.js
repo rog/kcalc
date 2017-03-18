@@ -13,7 +13,6 @@ export default class Logo extends React.PureComponent {
               <path className={style.Logo__cls_1} d='M266.92 71.12s1.21-12.75 17.91-18.82c0 0 3-3.95-4.55-10.63 0 0-14 8.5-15.48 29.45z' />
               <path className={style.Logo__cls_2} d='M267.35 59s1.54-25.19-28.68-22.63c0-.03 3.33 29.88 28.68 22.63z' />
               <path className={style.Logo__cls_3} d='M233.29 71.43c14.6-10.5 31.5-2 31.5-2s16.9-8.45 31.5 2 12.55 30.47 6.15 44.81-18.64 24.27-24.37 24.27c-6.27 0-7.39-4.3-13.28-4.3s-7 4.3-13.28 4.3c-5.73 0-18-9.93-24.37-24.27s-8.44-34.31 6.15-44.81z' />
-              <path className={style.Logo__cls_4} d='M284.07 72.08s31.44 11.28 0 50.72c0 0 18.2-28.51 0-50.72z' />
               <path className={style.Logo__cls_5} d='M179.18 113.16h37.11v31.56h-37.11z' />
               <ellipse className={style.Logo__cls_6} cx='197.74' cy='113.16' rx='18.55' ry='3.47' />
               <path className={style.Logo__cls_7} d='M179.18 147.23s11.16 7.34 41.13 1.18c30.78-6.32 45.17-1.18 45.17-1.18v-30.35c-13.89-10-70.6 5.9-86.29-3.47z' />
