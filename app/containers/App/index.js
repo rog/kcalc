@@ -10,15 +10,16 @@
 
 import React from 'react'
 
-export default class App extends React.PureComponent {
+import style from './style.scss'
 
+export default class App extends React.PureComponent {
   static propTypes = {
     children: React.PropTypes.node
   }
 
   render () {
     return (
-      <div>
+      <div className={style.wrapper}>
         {React.Children.toArray(this.props.children)}
       </div>
     )

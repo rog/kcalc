@@ -1,0 +1,26 @@
+/* Global styles */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: auto;
+  background: url('images/bg.png');
+}
+
+body.fontLoaded {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:global(#app) {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.wrapper{
+  height: 100%;
+}

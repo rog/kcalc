@@ -1,3 +1,4 @@
+const selectGlobal = (state) => state.get('global')
 // makeSelectLocationState expects a plain JS object for the routing state
 const makeSelectLocationState = () => {
   let prevRoutingState
@@ -16,5 +17,6 @@ const makeSelectLocationState = () => {
 }
 
 export {
+  selectGlobal,
   makeSelectLocationState
 }
