@@ -1,0 +1,13 @@
+.Meal{
+  padding: 50px 0;
+  width: 80%;
+  margin: 0 auto;
+  &__inputDanger {
+    select{
+      border-color: #ff3860;
+    }
+    &::after{
+      border-color: #ff3860;
+    }
+  }
+}
