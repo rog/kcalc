@@ -1,0 +1,41 @@
+.IntakeTable{
+  &__Head{
+    background-color: #00d1b2 !important;
+    th{
+      font-size: 18px;
+      color: #fff !important;
+      border: none !important;
+    }
+  }
+  &__HeadTime{
+    background-color: #e4fff8 !important;
+    th{
+      font-size: 18px;
+      color: #4dd2be;
+      border: none !important;
+    }
+    &__Calories{
+      text-align: center !important;
+    }
+  }
+  &__ActionsRow{
+    width: 100px;
+    text-align: center !important;
+  }
+  &__Footer{
+    background-color: #1eb4ff !important;
+    th{
+      font-size: 28px;
+      color: #fff !important;
+      border: none !important;
+      padding: 5px 0;
+      &:first-child{
+      text-align: left;}
+      span{
+        font-size: 14px;
+        padding: 0 12px 0 2px;
+      }
+    }
+
+  }
+}
