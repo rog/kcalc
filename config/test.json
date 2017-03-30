@@ -1,0 +1,9 @@
+{
+  mongodb: {
+    uri: "mongodb://localhost/calorie_counter_test",
+    can_reset: true
+  },
+  api: {
+    port: 8400
+  }
+}

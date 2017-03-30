@@ -1,0 +1,8 @@
+{
+	"mongodb": {
+		"uri": "mongodb://localhost/calorie_counter"
+	},
+	"api": {
+		"port": 8080
+	}
+}
