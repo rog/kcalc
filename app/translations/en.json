@@ -1,1 +1,27 @@
-[]
+{
+  "app.components.NotFoundPage.header": "This is NotFoundPage component!",
+  "kcalc.components.footer.author": "made with {love} by {author}",
+  "kcalc.components.footer.label.language": "Language",
+  "kcalc.components.login.login": "Log in",
+  "kcalc.components.login.password": "Password",
+  "kcalc.components.meal.button.add": "Add meal",
+  "kcalc.components.meal.form.error": "Oops!, there is an error refresh and try again: {error}",
+  "kcalc.components.meal.form.invalid": "Please fill all the fields",
+  "kcalc.components.meal.form.success": "Meal successfully added!",
+  "kcalc.components.meal.input.calories": "Calories",
+  "kcalc.components.meal.input.meal": "Meal",
+  "kcalc.components.meal.select.breakfast": "Breakfast",
+  "kcalc.components.meal.select.dinner": "Dinner",
+  "kcalc.components.meal.select.lunch": "Lunch",
+  "kcalc.components.meal.select.snack": "Snack",
+  "kcalc.components.meal.select.time": "Meal time",
+  "kcalc.components.meal.subtitle": "Add a meal, select day and calories",
+  "kcalc.components.meal.title": "Add Meal",
+  "kcalc.components.navigation.button.addmeal": "Add Meal",
+  "kcalc.components.navigation.menu.logout": "Log out",
+  "kcalc.components.navigation.tab.intake": "Intake",
+  "kcalc.components.register": "Sign up",
+  "kcalc.components.register.ok": "Account created successfully, you're logging on with your new account.",
+  "kcalc.containers.LocaleToggle.en": "English",
+  "kcalc.containers.LocaleToggle.es": "Español"
+}
