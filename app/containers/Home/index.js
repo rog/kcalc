@@ -46,7 +46,7 @@ export default class HomePage extends React.PureComponent {
     if (this.state.period === 'today') {
       return <IntakeTable date={this.state.day} />
     }
-    return <PeriodGraph />
+    return <PeriodGraph period={this.state.period} />
   }
   render () {
     return (

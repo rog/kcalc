@@ -87,6 +87,20 @@ export function intakeLoadByDate (date) {
   }
 }
 
+export function intakeLoadByPeriod (period) {
+  return function (dispatch) {
+    return IntakeApi.loadByPeriod(period).then(response => {
+      if (!response.error) {
+        dispatch(intakeLoadSuccess(response))
+      } else {
+        dispatch(intakeLoadError(response))
+      }
+    }).catch(error => {
+      throw (error)
+    })
+  }
+}
+
 export function mealEdit (meal) {
   return function (dispatch) {
     dispatch(intakeMealEdit(meal))

@@ -37,6 +37,24 @@ class IntakeApi {
     })
   }
 
+  static loadByPeriod (period) {
+    const credentials = JSON.parse(sessionStorage.getItem('credentials'))
+    const reqUrl = `http://localhost:8080/me/meals/period/${period}`
+    const authorization = Hawk.client.header(reqUrl, 'GET', {credentials})
+    const request = new Request(reqUrl, {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: authorization.field
+      })
+    })
+    return fetch(request).then(response => {
+      return response.json()
+    }).catch(error => {
+      return error
+    })
+  }
+
   static delete (payload) {
     const credentials = JSON.parse(sessionStorage.getItem('credentials'))
     const reqUrl = `http://localhost:8080/me/meals/${payload._id}`

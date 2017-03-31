@@ -1,4 +1,5 @@
 import Meal from '../../models/meal'
+import moment from 'moment'
 import parse from 'co-body'
 
 export function * get () {
@@ -37,6 +38,34 @@ export function * listByDate () {
     }
   })
   console.log(queryDateStart, queryDateEnd)
+  if (this.query.where) {
+    query.where(parseWhere(this))
+  }
+  const meals = yield query.exec()
+  this.type = 'json'
+  this.body = meals
+}
+
+export function * listByPeriod () {
+  let queryDateStart = false
+  let queryDateEnd = false
+  if (this.params.period === 'week') {
+    queryDateStart = moment().startOf('isoWeek').utcOffset(0, true)
+    queryDateEnd = moment().endOf('isoWeeks').utcOffset(0, true)
+  }
+  if (this.params.period === 'month') {
+    queryDateStart = moment().startOf('month').utcOffset(0, true)
+    queryDateEnd = moment().endOf('month').utcOffset(0, true)
+  }
+  console.log(queryDateStart, queryDateEnd)
+  let query = Meal.find({
+    user: this.params.user,
+    archived: false,
+    date: {
+      '$gte': queryDateStart,
+      '$lte': queryDateEnd
+    }
+  })
   if (this.query.where) {
     query.where(parseWhere(this))
   }

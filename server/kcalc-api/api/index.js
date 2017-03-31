@@ -30,6 +30,7 @@ export default function () {
 
   priv.get('/:role/:user/meals', meal.list)
   priv.get('/:role/:user/meals/date/:date', meal.listByDate)
+  priv.get('/:role/:user/meals/period/:period', meal.listByPeriod)
   priv.get('/:role/:user/meals/:meal', meal.get)
   priv.post('/:role/:user/meals', meal.create)
   priv.put('/:role/:user/meals/:meal', meal.update)
