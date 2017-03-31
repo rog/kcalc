@@ -1,4 +1,4 @@
-import koa from 'koa'
+import Koa from 'koa'
 import config from 'config'
 import mongoose from 'mongoose'
 import logger from 'koa-logger'
@@ -18,7 +18,7 @@ mongoose
   })
   .on('close', () => console.log('lost connection to mongodb'))
 
-const kcalcApi = koa()
+const kcalcApi = new Koa()
 if (process.env.NODE_ENV !== 'production') {
   kcalcApi.use(logger())
 }
